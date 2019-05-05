@@ -2,7 +2,7 @@
 % ************** OST <The river>******************
 clear
 clc
-Fs = 44100; % ²ÉÑùÆµÂÊ
+Fs = 44100; % é‡‡æ ·é¢‘ç‡
 t = 15/22; % =88
 r = 12/11; % =55
 % 1  =120bpm
@@ -626,19 +626,19 @@ xl1 = [xl1, zeros(1, Max - length(xl1))];
 yh1 = [yh1, zeros(1, Max - length(yh1))];
 
 
-% ÉùµÀºÏ²¢
+% å£°é“åˆå¹¶
 m12 = xl1 + yh1;
 m12max = max(max(m12), abs(min(m12)));
-Y1 = m12./m12max; % ¹éÒ»»¯´¦Àí£¬µÃµ½µ¥ÉùµÀÒôÀÖ
+Y1 = m12./m12max; % å½’ä¸€åŒ–å¤„ç†ï¼Œå¾—åˆ°å•å£°é“éŸ³ä¹
 
 Y = [xl1;yh1];
-Y2 = Y'; % Ë«ÉùµÀÒôÀÖ
-% sound(Y2, Fs);
+Y2 = Y'; % åŒå£°é“éŸ³ä¹
+sound(Y2, Fs);
 figure(1)
 plot(xl1);
 figure(2)
 plot(yh1);
-FileName = ('For_river(double_track).wav'); % Éè¶¨ÎÄ¼şÃû³Æ
-% audiowrite(FileName,Y2, Fs); % ±£´æÎªÎÄ¼ş
+FileName = ('For_river(double_track).wav'); % è®¾å®šæ–‡ä»¶åç§°
+% audiowrite(FileName,Y2, Fs); % ä¿å­˜ä¸ºæ–‡ä»¶
 % Image = imread('to_the_moon.bmp');
 % imshow(Image);
